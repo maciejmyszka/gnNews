@@ -1,9 +1,14 @@
-import React from 'react';
 import './App.css';
-import { MainView } from './views/MainView';
+import { ChakraProvider } from '@chakra-ui/react';
+import { router } from './routes/Routes';
+import { RouterProvider } from 'react-router-dom';
 
 function App() {
-  return <MainView />;
+  return (
+    <ChakraProvider>
+      <RouterProvider router={router} />
+    </ChakraProvider>
+  );
 }
 
 export default App;
