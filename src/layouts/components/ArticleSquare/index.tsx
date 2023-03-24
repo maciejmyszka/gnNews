@@ -1,9 +1,15 @@
 import { Flex, GridItem, Image, Text } from '@chakra-ui/react';
 import { ArticleModal } from '../ArticleModal';
 import { useState } from 'react';
+import { useSingleArticleContext } from '../../../context/SingleArticleContext';
+import moment from 'moment/moment';
 
-export const ArticleSquare = ({ urlToImage, title, publishedAt }: any) => {
+export const ArticleSquare = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const { urlToImage, title, publishedAt } = useSingleArticleContext();
+
+  const date = moment(publishedAt).format('HH:mm, DD.MM.YYYY');
 
   return (
     <>
@@ -23,8 +29,9 @@ export const ArticleSquare = ({ urlToImage, title, publishedAt }: any) => {
         boxShadow=' -3px 2px 18px -5px rgba(66, 68, 90, 1)'
       >
         <Image
-          src={urlToImage ?? 'https://bit.ly/dan-abramov'}
-          alt='Dan Abramov'
+          src={urlToImage ?? 'https://placehold.co/600x400'}
+          alt='Article photo'
+          loading='lazy'
           borderRadius='0.5rem'
           cursor='pointer'
           onClick={() => setIsModalOpen(true)}
@@ -40,7 +47,7 @@ export const ArticleSquare = ({ urlToImage, title, publishedAt }: any) => {
         </Text>
 
         <Flex justifyContent='flex-end' mb='0.5rem' color='#FF6900'>
-          <Text cursor='default'>{new Date(publishedAt).toLocaleString()}</Text>
+          <Text cursor='default'>{date}</Text>
         </Flex>
       </GridItem>
     </>

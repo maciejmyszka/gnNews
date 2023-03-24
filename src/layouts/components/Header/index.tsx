@@ -1,10 +1,26 @@
-import { Button, Flex, Heading, IconButton, Text } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Heading,
+  IconButton,
+  Popover,
+  PopoverTrigger,
+  Text,
+} from '@chakra-ui/react';
 import { TilesIcon } from '../../../icons/TilesIcon';
 import { ListIcon } from '../../../icons/ListIcon';
 import { useNavigate } from 'react-router-dom';
+import { Popup } from '../Popup';
+import { PolandIcon } from '../../../icons/PolandIcon';
+import { ChevronDownIcon } from '@chakra-ui/icons';
+import { LangPicker } from '../LangPicker';
+import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
+import { EnglishIcon } from '../../../icons/EnglishIcon';
 
 export const Header = ({ isList, setIsList }: any) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <Flex
@@ -54,13 +70,13 @@ export const Header = ({ isList, setIsList }: any) => {
         borderRadius='0.5rem'
       >
         <Text cursor='default' color='#fff'>
-          Change news view:
+          {t('header.changeNewsView')}
         </Text>
 
         <IconButton
           aria-label='tiles'
           onClick={() => setIsList(false)}
-          bg={!isList ? '#FF6900' : '#fff'}
+          bg={!isList ? '#FF6900' : '#D4D4D4'}
           _hover={{ bg: 'auto' }}
         >
           <TilesIcon />
@@ -69,13 +85,41 @@ export const Header = ({ isList, setIsList }: any) => {
         <IconButton
           aria-label='list'
           onClick={() => setIsList(true)}
-          bg={isList ? '#FF6900' : '#fff'}
+          bg={isList ? '#FF6900' : '#D4D4D4'}
           _hover={{ bg: 'auto' }}
         >
           <ListIcon />
         </IconButton>
 
-        <Button ml='2rem'>Open pop-up</Button>
+        <Popover>
+          <PopoverTrigger>
+            <Button ml='2rem' bg='#D4D4D4'>
+              {t('header.openPopUp')}
+            </Button>
+          </PopoverTrigger>
+
+          <Popup />
+        </Popover>
+
+        <Text cursor='default' color='#fff'>
+          {t('header.changeLanguage')}
+        </Text>
+
+        <Popover>
+          <PopoverTrigger>
+            <Button
+              bg='#2B2929'
+              display='flex'
+              gap='0.5rem'
+              _hover={{ bg: '#2B2929' }}
+            >
+              {i18n.language === 'pl-PL' ? <PolandIcon /> : <EnglishIcon />}
+              <ChevronDownIcon color='#fff' />
+            </Button>
+          </PopoverTrigger>
+
+          <LangPicker />
+        </Popover>
       </Flex>
     </Flex>
   );

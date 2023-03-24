@@ -1,11 +1,16 @@
-import { Flex, Grid, ListItem, Text, UnorderedList } from '@chakra-ui/react';
+import { Flex, Grid, Text, UnorderedList } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import { articlesState } from '../../../slices/articlesSlice';
 import { ArticleSquare } from '../ArticleSquare';
+import { SingleArticleProvider } from '../../../context/SingleArticleContext';
+import { Footer } from '../Footer';
+import { ArticleListElement } from '../ArticleListElement';
+import { Loader } from '../Loader';
 
 export const Content = ({ isList }: any) => {
-  const { articles, count } = useSelector(articlesState);
+  const { articles, status } = useSelector(articlesState);
 
+  if (status === 'loading') return <Loader />;
   return (
     <Flex
       w='100%'
@@ -17,17 +22,11 @@ export const Content = ({ isList }: any) => {
       overflowY='scroll'
     >
       {isList ? (
-        <UnorderedList>
-          {articles.map(({ publishedAt, title, url }: any) => (
-            <ListItem key={url} flexDirection='column'>
-              <Text color='#fff'>{title}</Text>
-
-              <Flex justifyContent='flex-end' mb='0.5rem'>
-                <Text color='#fff'>
-                  {new Date(publishedAt).toLocaleString()}
-                </Text>
-              </Flex>
-            </ListItem>
+        <UnorderedList display='flex' flexDirection='column' gap='1rem'>
+          {articles.map(({ url, ...rest }: any) => (
+            <SingleArticleProvider key={url} url={url} {...rest}>
+              <ArticleListElement key={url} />
+            </SingleArticleProvider>
           ))}
         </UnorderedList>
       ) : (
@@ -44,15 +43,14 @@ export const Content = ({ isList }: any) => {
           gap={6}
         >
           {articles.map(({ url, ...rest }: any) => (
-            <ArticleSquare key={url} {...rest} />
+            <SingleArticleProvider key={url} url={url} {...rest}>
+              <ArticleSquare />
+            </SingleArticleProvider>
           ))}
         </Grid>
       )}
 
-      <Flex flexDirection='column'>
-        <Text>{new Date().toLocaleString()}</Text>
-        <Text>{count}</Text>
-      </Flex>
+      <Footer />
     </Flex>
   );
 };

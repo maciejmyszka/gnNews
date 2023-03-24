@@ -5,9 +5,11 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <MainView />,
-  },
-  {
-    path: '/country/:name',
-    element: <MainView />,
+    children: [
+      {
+        path: '/country/:name',
+        element: <MainView />,
+      },
+    ],
   },
 ]);

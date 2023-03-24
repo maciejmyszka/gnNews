@@ -10,10 +10,12 @@ import {
 import { CloseIcon } from '@chakra-ui/icons';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { countries } from '../../../data/countries';
+import { useTranslation } from 'react-i18next';
 
 export const MobileMenu = ({ onClose, isOpen }: any) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
+  const { t } = useTranslation();
 
   const navigateTo = (to: string) => {
     navigate(to);
@@ -46,7 +48,7 @@ export const MobileMenu = ({ onClose, isOpen }: any) => {
           }}
         >
           <Text color='rgba(242, 103, 0, 0.8)' my='1rem' fontSize='1.4rem'>
-            Choose the country of the news:
+            {t('menu.chooseCountryOfTheNews')}
           </Text>
           {countries.map(({ id, name, to, Icon }) => (
             <Flex key={id} gap='0.5rem'>
@@ -61,7 +63,7 @@ export const MobileMenu = ({ onClose, isOpen }: any) => {
                   pathname === to ? 'rgba(242, 103, 0, 0.8)' : 'transparent'
                 }
               >
-                {name}
+                {t(`menu.${name}`)}
               </Text>
             </Flex>
           ))}
