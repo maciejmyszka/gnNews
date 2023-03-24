@@ -4,6 +4,8 @@ import {
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
+  Flex,
+  Text,
 } from '@chakra-ui/react';
 import { CloseIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
@@ -27,22 +29,34 @@ export const MobileMenu = ({ onClose, isOpen }: any) => {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
+            backgroundColor: 'rgba(242, 103, 0, 0.8)',
+            borderColor: 'rgba(8, 5, 4, 0.89)',
           }}
         >
-          Menu
+          <Text fontSize='1.8rem'>Menu</Text>
           <CloseIcon style={{ cursor: 'pointer' }} onClick={onClose} />
         </DrawerHeader>
         <DrawerBody
-          style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+            backgroundColor: 'rgba(8, 5, 4, 0.89)',
+          }}
         >
-          {countries.map(({ id, name, to }) => (
-            <p
-              key={id}
-              onClick={() => navigateTo(to)}
-              style={{ cursor: 'pointer' }}
-            >
-              {name}
-            </p>
+          <Text color='rgba(242, 103, 0, 0.8)' my='1rem' fontSize='1.4rem'>
+            Choose the country of the news:
+          </Text>
+          {countries.map(({ id, name, to, Icon }) => (
+            <Flex key={id} gap='0.5rem'>
+              <Icon />
+              <Text
+                onClick={() => navigateTo(to)}
+                style={{ cursor: 'pointer', color: '#fff', fontSize: '1.3rem' }}
+              >
+                {name}
+              </Text>
+            </Flex>
           ))}
         </DrawerBody>
       </DrawerContent>
