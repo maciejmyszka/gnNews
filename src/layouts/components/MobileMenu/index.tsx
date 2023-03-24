@@ -8,11 +8,12 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { CloseIcon } from '@chakra-ui/icons';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { countries } from '../../../data/countries';
 
 export const MobileMenu = ({ onClose, isOpen }: any) => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const navigateTo = (to: string) => {
     navigate(to);
@@ -52,7 +53,13 @@ export const MobileMenu = ({ onClose, isOpen }: any) => {
               <Icon />
               <Text
                 onClick={() => navigateTo(to)}
-                style={{ cursor: 'pointer', color: '#fff', fontSize: '1.3rem' }}
+                style={{ cursor: 'pointer', fontSize: '1.3rem' }}
+                borderBottom='1px solid'
+                width='80%'
+                color={pathname === to ? 'rgba(242, 103, 0, 0.8)' : '#fff'}
+                borderColor={
+                  pathname === to ? 'rgba(242, 103, 0, 0.8)' : 'transparent'
+                }
               >
                 {name}
               </Text>
