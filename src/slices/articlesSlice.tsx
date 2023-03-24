@@ -28,7 +28,7 @@ export const getArticles = createAsyncThunk(
   '/articles',
   async (country: string) => {
     const response = await useAxios().get(
-      `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=2683cfd947474f07ae9238a26174b63d`
+      `https://newsapi.org/v2/top-headlines?country=${country}&pageSize=100&apiKey=2683cfd947474f07ae9238a26174b63d`
     );
     return response;
   }
