@@ -1,0 +1,28 @@
+{
+  "header": {
+    "changeLanguage": "Change language:",
+    "changeNewsView": "Change news view:",
+    "openPopUp": "Open pop-up",
+    "selectLanguage": "Select language",
+    "WhatWasTheMostDifficultTaskInProject": "What was the most difficult task in project?",
+    "WhatWasTheFunniestTaskInProject": "What was the funniest task in project?"
+  },
+  "menu": {
+    "chooseCountryOfTheNews": "Choose country of the news:",
+    "poland": "Poland",
+    "usa": "USA",
+    "france": "France",
+    "portugal": "Portugal",
+    "italy": "Italy",
+    "turkey": "Turkey",
+    "germany": "Germany",
+    "austria": "Austria"
+  },
+  "footer": {
+    "articlesQuantity": "Articles quantity:"
+  },
+  "buttons":{
+    "close": "Close",
+    "readMore": "Read more"
+  }
+}

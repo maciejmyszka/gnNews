@@ -12,11 +12,11 @@ export const Portugalcon = forwardRef<SVGSVGElement | null>((props, ref) => (
     <path fill='#060' d='M0 0h256v480H0z'></path>
     <g
       fill='#ff0'
-      fill-rule='evenodd'
+      fillRule='evenodd'
       stroke='#000'
-      stroke-linecap='round'
-      stroke-linejoin='round'
-      stroke-width='.6'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      strokeWidth='.6'
     >
       <path d='M339.5 306.2c-32.3-1-180-93.2-181-108l8.1-13.5c14.7 21.3 165.7 111 180.6 107.8l-7.7 13.7'></path>
       <path d='M164.9 182.8c-2.9 7.8 38.6 33.4 88.4 63.8 49.9 30.3 92.9 49 96 46.4l1.5-2.8c-.6 1-2 1.3-4.3.6-13.5-3.9-48.6-20-92.1-46.4-43.6-26.4-81.4-50.7-87.3-61a6.3 6.3 0 01-.6-3.1h-.2l-1.2 2.2-.2.3zm175.3 123.8c-.5 1-1.6 1-3.5.8-12-1.3-48.6-19.1-91.9-45-50.4-30.2-92-57.6-87.4-64.8l1.2-2.2.2.1c-4 12.2 82.1 61.4 87.2 64.6 49.8 30.8 91.8 48.9 95.5 44.2l-1.3 2.3z'></path>
@@ -40,17 +40,17 @@ export const Portugalcon = forwardRef<SVGSVGElement | null>((props, ref) => (
       <path
         fill='#fff'
         stroke='#000'
-        stroke-width='.7'
+        strokeWidth='.7'
         d='M180.6 211a58.7 58.7 0 0017.5 41.7 59 59 0 0041.8 17.6 59.4 59.4 0 0042-17.4 59 59 0 0017.4-41.8v-79.2l-118.7-.2V211z'
       ></path>
       <path
         fill='red'
         stroke='#000'
-        stroke-width='.5'
+        strokeWidth='.5'
         d='M182.8 211.1a56.4 56.4 0 0016.8 40 57 57 0 0040.2 16.8 56.9 56.9 0 0040.2-16.6 56.4 56.4 0 0016.7-40v-77H183v76.8m91-53.7v48.9l-.1 5.1a33.2 33.2 0 01-10 24 34 34 0 01-24 10c-9.4 0-17.7-4-23.9-10.2a34 34 0 01-10-24v-54l68 .2z'
       ></path>
       <g id='pt_svg__e_745'>
-        <g id='pt_svg__d_746' fill='#ff0' stroke='#000' stroke-width='.5'>
+        <g id='pt_svg__d_746' fill='#ff0' stroke='#000' strokeWidth='.5'>
           <path
             stroke='none'
             d='M190.2 154.4c.1-5.5 4-6.8 4-6.8.1 0 4.3 1.4 4.3 6.9h-8.3'

@@ -9,8 +9,8 @@ export const UnitedStatesIcon = forwardRef<SVGSVGElement | null>(
       {...props}
       ref={ref}
     >
-      <g fill-rule='evenodd'>
-        <g stroke-width='1pt'>
+      <g fillRule='evenodd'>
+        <g strokeWidth='1pt'>
           <path
             fill='#bd3d44'
             d='M0 0h912v36.938H0zm0 73.875h912v36.938H0zm0 73.781h912v37.031H0zm0 73.875h912v36.938H0zm0 73.875h912v36.938H0zm0 73.781h912v36.938H0zm0 73.875h912V480H0z'

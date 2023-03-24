@@ -1,0 +1,28 @@
+{
+  "header": {
+    "changeLanguage": "Zmień język:",
+    "changeNewsView": "Zmień widok wiadomości:",
+    "openPopUp": "Otwórz okienko",
+    "selectLanguage": "Wybierz język",
+    "WhatWasTheMostDifficultTaskInProject": "Jaka była najtrudniejsza rzecz w projekcie?",
+    "WhatWasTheFunniestTaskInProject": "Jaka była najfajniejsza rzecz w projekcie?"
+  },
+  "menu": {
+    "chooseCountryOfTheNews": "Wybierz kraj wiadomości:",
+    "poland": "Polska",
+    "usa": "Stany Zjednoczone",
+    "france": "Francja",
+    "portugal": "Portugalia",
+    "italy": "Włochy",
+    "turkey": "Turcja",
+    "germany": "Niemcy",
+    "austria": "Austria"
+  },
+  "footer": {
+    "articlesQuantity": "Ilość wiadomości:"
+  },
+  "buttons":{
+    "close": "Zamknij",
+    "readMore": "Pokaż więcej"
+  }
+}

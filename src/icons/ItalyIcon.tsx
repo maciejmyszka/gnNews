@@ -13,7 +13,7 @@ export const ItalyIcon = forwardRef<SVGSVGElement | null>((props, ref) => (
     {...props}
     ref={ref}
   >
-    <g fill-rule='nonzero'>
+    <g fillRule='nonzero'>
       <path
         fill='#009246'
         d='M29.47 0v63.15H4.99C2.24 63.15 0 60.9 0 58.16V4.99C0 2.24 2.24 0 4.99 0h24.48z'
