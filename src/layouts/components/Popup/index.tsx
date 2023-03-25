@@ -14,7 +14,7 @@ export const Popup = () => {
 
   return (
     <Portal>
-      <PopoverContent mr='3rem' bg='#D4D4D4'>
+      <PopoverContent mr='3rem' bg='#D4D4D4' zIndex='9999'>
         <PopoverArrow bg='#D4D4D4' />
         <PopoverHeader mr='1rem' fontWeight='600'>
           {t('header.WhatWasTheMostDifficultTaskInProject')}

@@ -4,11 +4,12 @@ import { router } from './routes/Routes';
 import { RouterProvider } from 'react-router-dom';
 import { useEffect } from 'react';
 import i18next from './config/i18next';
+import { LangFormatEnum } from './enums/LangFormatEnum';
 
 function App() {
   useEffect(() => {
     i18next.init({
-      fallbackLng: ['en-US', 'pl-PL'],
+      fallbackLng: [LangFormatEnum.EN, LangFormatEnum.PL],
     });
 
     const savedLang = localStorage.getItem('lang');
@@ -18,8 +19,8 @@ function App() {
       return;
     }
 
-    i18next.changeLanguage('en-US');
-    localStorage.setItem('lang', 'en-US');
+    i18next.changeLanguage(LangFormatEnum.EN);
+    localStorage.setItem('lang', LangFormatEnum.EN);
     return;
   }, []);
 

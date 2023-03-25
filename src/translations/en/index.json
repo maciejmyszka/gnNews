@@ -5,7 +5,9 @@
     "openPopUp": "Open pop-up",
     "selectLanguage": "Select language",
     "WhatWasTheMostDifficultTaskInProject": "What was the most difficult task in project?",
-    "WhatWasTheFunniestTaskInProject": "What was the funniest task in project?"
+    "WhatWasTheFunniestTaskInProject": "What was the funniest task in project?",
+    "showMessage": "Show message",
+    "settings": "Settings"
   },
   "menu": {
     "chooseCountryOfTheNews": "Choose country of the news:",
@@ -23,6 +25,8 @@
   },
   "buttons":{
     "close": "Close",
-    "readMore": "Read more"
+    "readMore": "Read more",
+    "show": "Show",
+    "hide": "Hide"
   }
 }

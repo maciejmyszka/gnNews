@@ -2,21 +2,18 @@ import { Flex } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { countries } from '../../../data/countries';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { LeftMenuContainer } from '../../containers/LeftMenuContainer';
 
-export const LeftSideMenu = ({ onOpen }: any) => {
+interface Props {
+  onOpen: () => void;
+}
+
+export const LeftSideMenu = ({ onOpen }: Props) => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
 
   return (
-    <Flex
-      width='5%'
-      height='100vh'
-      bg='rgba(2, 1, 0, 0.93)'
-      flexDirection='column'
-      alignItems='center'
-      pt='1%'
-      position='relative'
-    >
+    <LeftMenuContainer>
       <HamburgerIcon
         style={{
           fontSize: '35px',
@@ -49,6 +46,6 @@ export const LeftSideMenu = ({ onOpen }: any) => {
           </Flex>
         ))}
       </Flex>
-    </Flex>
+    </LeftMenuContainer>
   );
 };

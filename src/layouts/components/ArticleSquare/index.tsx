@@ -3,13 +3,14 @@ import { ArticleModal } from '../ArticleModal';
 import { useState } from 'react';
 import { useSingleArticleContext } from '../../../context/SingleArticleContext';
 import moment from 'moment/moment';
+import { DateFormatEnum } from '../../../enums/DateFormatEnum';
 
 export const ArticleSquare = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const { urlToImage, title, publishedAt } = useSingleArticleContext();
 
-  const date = moment(publishedAt).format('HH:mm, DD.MM.YYYY');
+  const date = moment(publishedAt).format(DateFormatEnum.TIME_DATE_FORMAT);
 
   return (
     <>

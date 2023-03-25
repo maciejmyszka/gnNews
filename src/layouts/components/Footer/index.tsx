@@ -4,17 +4,21 @@ import { articlesState } from '../../../slices/articlesSlice';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { DateFormatEnum } from '../../../enums/DateFormatEnum';
 
 export const Footer = () => {
   const { count } = useSelector(articlesState);
   const { t } = useTranslation();
 
   const [currentTime, setCurrentTime] = useState<any>(
-    moment().format('HH:mm:ss')
+    moment().format(DateFormatEnum.TIME_FORMAT)
   );
 
   useEffect(() => {
-    setTimeout(() => setCurrentTime(moment().format('HH:mm:ss')), 1000);
+    setTimeout(
+      () => setCurrentTime(moment().format(DateFormatEnum.TIME_FORMAT)),
+      1000
+    );
   });
 
   return (

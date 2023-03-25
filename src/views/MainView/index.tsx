@@ -1,7 +1,7 @@
 import { useDisclosure } from '@chakra-ui/react';
 import { MobileMenu } from '../../layouts/components/MobileMenu';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getArticles } from '../../slices/articlesSlice';
 import { AppDispatch } from '../../config/store';
@@ -14,11 +14,8 @@ import { Content } from '../../layouts/components/Content';
 
 export const MainView = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const dispatch = useDispatch<AppDispatch>();
-
   const { name } = useParams();
-
-  const [isList, setIsList] = useState<boolean>(false);
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     const symbol =
@@ -35,8 +32,8 @@ export const MainView = () => {
       <MobileMenu isOpen={isOpen} onClose={onClose} />
 
       <ContentContainer>
-        <Header isList={isList} setIsList={setIsList} />
-        <Content isList={isList} />
+        <Header onOpen={onOpen} />
+        <Content />
       </ContentContainer>
     </MainContainer>
   );

@@ -5,7 +5,9 @@
     "openPopUp": "Otwórz okienko",
     "selectLanguage": "Wybierz język",
     "WhatWasTheMostDifficultTaskInProject": "Jaka była najtrudniejsza rzecz w projekcie?",
-    "WhatWasTheFunniestTaskInProject": "Jaka była najfajniejsza rzecz w projekcie?"
+    "WhatWasTheFunniestTaskInProject": "Jaka była najfajniejsza rzecz w projekcie?",
+    "showMessage": "Pokaż wiadomość",
+    "settings": "Ustawienia"
   },
   "menu": {
     "chooseCountryOfTheNews": "Wybierz kraj wiadomości:",
@@ -23,6 +25,8 @@
   },
   "buttons":{
     "close": "Zamknij",
-    "readMore": "Pokaż więcej"
+    "readMore": "Pokaż więcej",
+    "show": "Pokaż",
+    "hide": "Ukryj"
   }
 }

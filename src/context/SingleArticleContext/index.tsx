@@ -1,6 +1,37 @@
 import { createContext, memo, useContext } from 'react';
+import { ChildrenProps } from '../../types/ChildrenProps';
 
-export const singleArticleContext = createContext<any>(null);
+interface ArticleProviderProps extends ChildrenProps {
+  author: string;
+  content: string | null;
+  description: string | null;
+  publishedAt: string;
+  title: string;
+  url: string;
+  urlToImage: string | null;
+  source: {
+    id: string | null;
+    name: string;
+  };
+}
+
+interface ArticleStateContext {
+  author: string;
+  content: string | null;
+  description: string | null;
+  publishedAt: string;
+  title: string;
+  url: string;
+  urlToImage: string | null;
+  source: {
+    id: string | null;
+    name: string;
+  };
+}
+
+export const singleArticleContext = createContext<ArticleStateContext | null>(
+  null
+);
 
 const { Provider } = singleArticleContext;
 
@@ -15,7 +46,7 @@ export const SingleArticleProvider = memo(
     url,
     urlToImage,
     source,
-  }: any) => {
+  }: ArticleProviderProps) => {
     return (
       <Provider
         value={{

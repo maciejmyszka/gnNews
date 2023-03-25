@@ -1,11 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from '../config/store';
 import { useAxios } from '../hooks';
+import { StatusEnum } from '../enums/StatusEnum';
+import { ArticleType } from '../types/ArticleTypes';
+interface InitialTypes {
+  articles: ArticleType[];
+  count: number;
+  status: StatusEnum;
+}
 
-const initialState: any = {
+const initialState: InitialTypes = {
   articles: [],
   count: 0,
-  status: 'idle',
+  status: StatusEnum.IDLE,
 };
 
 export const articlesSlice = createSlice({
@@ -14,10 +21,10 @@ export const articlesSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getArticles.pending, (state) => {
-      state.status = 'loading';
+      state.status = StatusEnum.LOADING;
     });
     builder.addCase(getArticles.fulfilled, (state, action) => {
-      state.status = 'idle';
+      state.status = StatusEnum.IDLE;
       state.articles = action.payload?.articles || [];
       state.count = action.payload?.totalResults || 0;
     });

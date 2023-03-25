@@ -13,12 +13,22 @@ import {
 } from '@chakra-ui/react';
 import { useSingleArticleContext } from '../../../context/SingleArticleContext';
 import { useTranslation } from 'react-i18next';
+import moment from 'moment';
+import { DateFormatEnum } from '../../../enums/DateFormatEnum';
 
-export const ArticleModal = ({ isOpen, onClose }: any) => {
+interface Props {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export const ArticleModal = ({ isOpen, onClose }: Props) => {
   const { publishedAt, title, url, urlToImage, content, description, source } =
     useSingleArticleContext();
 
   const { t } = useTranslation();
+  const formattedDate = moment(publishedAt).format(
+    DateFormatEnum.TIME_DATE_FORMAT
+  );
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
@@ -42,7 +52,7 @@ export const ArticleModal = ({ isOpen, onClose }: any) => {
               </span>{' '}
               at{' '}
               <span style={{ color: 'rgba(242, 103, 0, 0.8)' }}>
-                {publishedAt}
+                {formattedDate}
               </span>{' '}
             </Text>
           </Flex>
