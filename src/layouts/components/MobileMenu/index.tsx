@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import {
   Drawer,
   DrawerBody,
@@ -7,10 +9,8 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { CloseIcon } from '@chakra-ui/icons';
-import { useNavigate } from 'react-router-dom';
-import { countries } from '../../../data/countries';
-import { useTranslation } from 'react-i18next';
-import { CountryMenuElement } from '../CountryMenuElement';
+import { CountryMenuElement } from 'layouts/components/CountryMenuElement';
+import { useCountries } from 'hooks/useCountries';
 
 interface Props {
   onClose: () => void;
@@ -20,6 +20,7 @@ interface Props {
 export const MobileMenu = ({ onClose, isOpen }: Props) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { countries } = useCountries();
 
   const navigateTo = (to: string) => {
     navigate(to);
@@ -32,27 +33,23 @@ export const MobileMenu = ({ onClose, isOpen }: Props) => {
       <DrawerContent>
         <DrawerHeader
           borderBottomWidth='1px'
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            backgroundColor: 'rgba(242, 103, 0, 0.8)',
-            borderColor: 'rgba(8, 5, 4, 0.89)',
-          }}
+          backgroundColor='lightOrange'
+          borderColor='lightGray'
+          display='flex'
+          justifyContent='space-between'
+          alignItems='center'
         >
           <Text fontSize='1.8rem'>Menu</Text>
           <CloseIcon style={{ cursor: 'pointer' }} onClick={onClose} />
         </DrawerHeader>
 
         <DrawerBody
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '1rem',
-            backgroundColor: 'rgba(8, 5, 4, 0.89)',
-          }}
+          display='flex'
+          flexDirection='column'
+          gap='1rem'
+          bg='lightGray'
         >
-          <Text color='rgba(242, 103, 0, 0.8)' my='1rem' fontSize='1.4rem'>
+          <Text color='lightOrange' my='1rem' fontSize='1.4rem'>
             {t('menu.chooseCountryOfTheNews')}
           </Text>
 

@@ -23,10 +23,8 @@ export const CountryMenuElement = memo(
           style={{ cursor: 'pointer', fontSize: '1.3rem' }}
           borderBottom='1px solid'
           width='80%'
-          color={pathname === to ? 'rgba(242, 103, 0, 0.8)' : '#fff'}
-          borderColor={
-            pathname === to ? 'rgba(242, 103, 0, 0.8)' : 'transparent'
-          }
+          color={pathname === to ? 'lightOrange' : 'white'}
+          borderColor={pathname === to ? 'lightOrange' : 'transparent'}
         >
           {t(`menu.${name}`)}
         </Text>

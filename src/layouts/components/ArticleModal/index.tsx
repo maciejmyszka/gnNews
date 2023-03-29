@@ -11,10 +11,10 @@ import {
   ModalOverlay,
   Text,
 } from '@chakra-ui/react';
-import { useSingleArticleContext } from '../../../context/SingleArticleContext';
 import { useTranslation } from 'react-i18next';
-import moment from 'moment';
-import { DateFormatEnum } from '../../../enums/DateFormatEnum';
+import { useSingleArticleContext } from 'context/SingleArticleContext';
+import { DateFormatEnum } from 'enums/DateFormatEnum';
+import { useMoment } from 'hooks/useMoment';
 
 interface Props {
   isOpen: boolean;
@@ -26,14 +26,12 @@ export const ArticleModal = ({ isOpen, onClose }: Props) => {
     useSingleArticleContext();
 
   const { t } = useTranslation();
-  const formattedDate = moment(publishedAt).format(
-    DateFormatEnum.TIME_DATE_FORMAT
-  );
+  const date = useMoment(DateFormatEnum.TIME_DATE_FORMAT, publishedAt);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent bg='#D4D4D4'>
+      <ModalContent bg='light'>
         <ModalHeader mr='1rem'>{title}</ModalHeader>
 
         <ModalCloseButton />
@@ -50,18 +48,15 @@ export const ArticleModal = ({ isOpen, onClose }: Props) => {
               <span style={{ color: 'rgba(242, 103, 0, 0.8)' }}>
                 {source.name}
               </span>{' '}
-              at{' '}
-              <span style={{ color: 'rgba(242, 103, 0, 0.8)' }}>
-                {formattedDate}
-              </span>{' '}
+              at <span style={{ color: 'rgba(242, 103, 0, 0.8)' }}>{date}</span>{' '}
             </Text>
           </Flex>
         </ModalBody>
 
         <ModalFooter>
           <Button
-            bg='rgba(8, 5, 4)'
-            color='#FF6900'
+            bg='lightGray'
+            color='main'
             mr={3}
             onClick={onClose}
             _hover={{ backgroundColor: 'auto' }}
@@ -70,7 +65,7 @@ export const ArticleModal = ({ isOpen, onClose }: Props) => {
           </Button>
           <Button
             variant='ghost'
-            color='#FF6900'
+            color='main'
             onClick={() => window.open(url, '_blank')}
           >
             {t('buttons.readMore')}

@@ -1,32 +1,25 @@
-import { Flex, GridItem, Image, Text } from '@chakra-ui/react';
-import { ArticleModal } from '../ArticleModal';
-import { useState } from 'react';
-import { useSingleArticleContext } from '../../../context/SingleArticleContext';
-import moment from 'moment/moment';
-import { DateFormatEnum } from '../../../enums/DateFormatEnum';
+import { Flex, GridItem, Image, Text, useDisclosure } from '@chakra-ui/react';
+import { ArticleModal } from 'layouts/components/ArticleModal';
+import { useSingleArticleContext } from 'context/SingleArticleContext';
+import { DateFormatEnum } from 'enums/DateFormatEnum';
+import { useMoment } from 'hooks/useMoment';
 
 export const ArticleSquare = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { urlToImage, title, publishedAt } = useSingleArticleContext();
 
-  const date = moment(publishedAt).format(DateFormatEnum.TIME_DATE_FORMAT);
+  const date = useMoment(DateFormatEnum.TIME_DATE_FORMAT, publishedAt);
 
   return (
     <>
-      {isModalOpen && (
-        <ArticleModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
-      )}
+      {isOpen && <ArticleModal isOpen={isOpen} onClose={onClose} />}
 
       <GridItem
         flexDirection='column'
         display='flex'
         borderRadius='0.5rem'
         p='0.6rem'
-        bg='rgba(8, 5, 4, 0.89)'
+        bg='lightGray'
         boxShadow=' -3px 2px 18px -5px rgba(66, 68, 90, 1)'
       >
         <Image
@@ -35,19 +28,19 @@ export const ArticleSquare = () => {
           loading='lazy'
           borderRadius='0.5rem'
           cursor='pointer'
-          onClick={() => setIsModalOpen(true)}
+          onClick={onOpen}
         />
         <Text
           mt='0.5rem'
-          color='#fff'
+          color='white'
           cursor='pointer'
           _hover={{ textDecoration: 'underline' }}
-          onClick={() => setIsModalOpen(true)}
+          onClick={onOpen}
         >
           {title}
         </Text>
 
-        <Flex justifyContent='flex-end' mb='0.5rem' color='#FF6900'>
+        <Flex justifyContent='flex-end' mb='0.5rem' color='main'>
           <Text cursor='default'>{date}</Text>
         </Flex>
       </GridItem>

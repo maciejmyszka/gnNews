@@ -8,16 +8,16 @@ import {
   Portal,
 } from '@chakra-ui/react';
 import { useTranslation } from 'react-i18next';
-import { langs } from '../../../data/langs';
-import { changeLang } from '../../../utils/changeLang';
+import { langs } from 'data/langs';
+import { changeLang } from 'utils/changeLang';
 
 export const LangPicker = () => {
   const { t } = useTranslation();
 
   return (
     <Portal>
-      <PopoverContent mr='3rem' bg='#D4D4D4'>
-        <PopoverArrow bg='#D4D4D4' />
+      <PopoverContent mr='3rem' bg='light'>
+        <PopoverArrow bg='light' />
         <PopoverHeader mr='1rem' fontWeight='600'>
           {t('header.selectLanguage')}
         </PopoverHeader>

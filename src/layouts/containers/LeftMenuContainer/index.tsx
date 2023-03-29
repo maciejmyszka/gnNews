@@ -1,12 +1,12 @@
-import { ChildrenProps } from '../../../types/ChildrenProps';
-import { Flex } from '@chakra-ui/react';
 import { memo } from 'react';
+import { Flex } from '@chakra-ui/react';
+import { ChildrenProps } from 'types/ChildrenProps';
 
 export const LeftMenuContainer = memo(({ children }: ChildrenProps) => (
   <Flex
     width='5%'
     height='100vh'
-    bg='rgba(2, 1, 0, 0.93)'
+    bg='dark'
     flexDirection='column'
     alignItems='center'
     pt='1%'

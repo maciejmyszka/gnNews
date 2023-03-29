@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { ChildrenProps } from '../../../types/ChildrenProps';
+import { ChildrenProps } from 'types/ChildrenProps';
 import { Flex } from '@chakra-ui/react';
 
 export const HeaderContainer = memo(({ children }: ChildrenProps) => (

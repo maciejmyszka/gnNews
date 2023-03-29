@@ -1,7 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../config/store';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from 'config/store';
 
-const initialState: any = {
+interface InitialState {
+  isList: boolean;
+}
+
+const initialState: InitialState = {
   isList: false,
 };
 
@@ -9,7 +13,7 @@ export const appSlice = createSlice({
   name: 'app',
   initialState,
   reducers: {
-    setIsList: (state, action) => {
+    setIsList: (state, action: PayloadAction<boolean>) => {
       state.isList = action.payload;
     },
   },

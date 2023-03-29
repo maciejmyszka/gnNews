@@ -1,7 +1,7 @@
-import { Flex, IconButton, Text } from '@chakra-ui/react';
-import { langs } from '../../../data/langs';
-import { changeLang } from '../../../utils/changeLang';
 import { useTranslation } from 'react-i18next';
+import { Flex, IconButton, Text } from '@chakra-ui/react';
+import { langs } from 'data/langs';
+import { changeLang } from 'utils/changeLang';
 
 export const MobileChangeLang = () => {
   const { t } = useTranslation();

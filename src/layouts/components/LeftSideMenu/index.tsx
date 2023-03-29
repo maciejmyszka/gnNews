@@ -1,8 +1,8 @@
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Flex } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { countries } from '../../../data/countries';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { LeftMenuContainer } from '../../containers/LeftMenuContainer';
+import { LeftMenuContainer } from 'layouts/containers/LeftMenuContainer';
+import { useCountries } from 'hooks/useCountries';
 
 interface Props {
   onOpen: () => void;
@@ -10,16 +10,15 @@ interface Props {
 
 export const LeftSideMenu = ({ onOpen }: Props) => {
   const { pathname } = useLocation();
+  const { countries } = useCountries();
   const navigate = useNavigate();
 
   return (
     <LeftMenuContainer>
       <HamburgerIcon
-        style={{
-          fontSize: '35px',
-          cursor: 'pointer',
-          color: '#FF6900',
-        }}
+        fontSize='35px'
+        cursor='pointer'
+        color='main'
         onClick={onOpen}
       />
 
@@ -38,9 +37,9 @@ export const LeftSideMenu = ({ onOpen }: Props) => {
             onClick={() => navigate(to)}
             py='1.2rem'
             justifyContent='center'
-            bg={to === pathname ? 'rgba(2, 1, 0, 0.93)' : 'auto'}
+            bg={to === pathname ? 'dark' : 'auto'}
             borderBottom='1px solid'
-            borderColor={to === pathname ? '#FF6900' : 'transparent'}
+            borderColor={to === pathname ? 'main' : 'transparent'}
           >
             <Icon />
           </Flex>

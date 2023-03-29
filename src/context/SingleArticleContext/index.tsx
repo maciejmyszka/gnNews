@@ -1,5 +1,5 @@
 import { createContext, memo, useContext } from 'react';
-import { ChildrenProps } from '../../types/ChildrenProps';
+import { ChildrenProps } from 'types/ChildrenProps';
 
 interface ArticleProviderProps extends ChildrenProps {
   author: string;
@@ -15,19 +15,9 @@ interface ArticleProviderProps extends ChildrenProps {
   };
 }
 
-interface ArticleStateContext {
-  author: string;
-  content: string | null;
-  description: string | null;
-  publishedAt: string;
-  title: string;
-  url: string;
-  urlToImage: string | null;
-  source: {
-    id: string | null;
-    name: string;
-  };
-}
+type ArticleStateContext = Omit<ArticleProviderProps, 'children'>;
+
+//przenieść do typów
 
 export const singleArticleContext = createContext<ArticleStateContext | null>(
   null
@@ -73,25 +63,7 @@ export const useSingleArticleContext = () => {
     throw new Error('You have to add SingleArticleProvider');
   }
 
-  const {
-    author,
-    content,
-    description,
-    publishedAt,
-    title,
-    url,
-    urlToImage,
-    source,
-  } = singleArticleState;
-
   return {
-    author,
-    content,
-    description,
-    publishedAt,
-    title,
-    url,
-    urlToImage,
-    source,
+    ...singleArticleState,
   };
 };

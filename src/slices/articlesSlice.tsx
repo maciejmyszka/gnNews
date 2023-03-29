@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../config/store';
-import { useAxios } from '../hooks';
-import { StatusEnum } from '../enums/StatusEnum';
-import { ArticleType } from '../types/ArticleTypes';
+import { RootState } from 'config/store';
+import { useAxios } from 'hooks/useAxios';
+import { StatusEnum } from 'enums/StatusEnum';
+import { ArticleModel, ArticleResponse } from 'types/ArticleTypes';
+
 interface InitialTypes {
-  articles: ArticleType[];
+  articles: ArticleModel[];
   count: number;
   status: StatusEnum;
 }
@@ -34,14 +35,16 @@ export const articlesSlice = createSlice({
 export const getArticles = createAsyncThunk(
   '/articles',
   async (country: string) => {
-    const response = await useAxios().get(
-      `https://newsapi.org/v2/top-headlines?country=${country}&pageSize=100&apiKey=${process.env.REACT_APP_API_KEY}`
-    );
-    return response;
+    try {
+      const response = await useAxios().get<ArticleResponse>(
+        `${process.env.REACT_APP_API_URL}/top-headlines?country=${country}&pageSize=100&apiKey=${process.env.REACT_APP_API_KEY}`
+      );
+      return response.data;
+    } catch (err) {
+      console.error(err);
+    }
   }
 );
-
-export const {} = articlesSlice.actions;
 
 export const articlesState = (state: RootState) => state.articles;
 

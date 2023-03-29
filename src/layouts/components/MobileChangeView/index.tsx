@@ -1,9 +1,9 @@
-import { Flex, IconButton, Text } from '@chakra-ui/react';
-import { appState, setIsList } from '../../../slices/appSlice';
-import { TilesIcon } from '../../../icons/TilesIcon';
-import { ListIcon } from '../../../icons/ListIcon';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { Flex, IconButton, Text } from '@chakra-ui/react';
+import { appState, setIsList } from 'slices/appSlice';
+import { TilesIcon } from 'icons/TilesIcon';
+import { ListIcon } from 'icons/ListIcon';
 
 export const MobileChangeView = () => {
   const { t } = useTranslation();
@@ -18,7 +18,7 @@ export const MobileChangeView = () => {
         <IconButton
           aria-label='tiles'
           onClick={() => dispatch(setIsList(false))}
-          bg={!isList ? '#FF6900' : '#D4D4D4'}
+          bg={!isList ? 'main' : 'light'}
           _hover={{ bg: 'auto' }}
         >
           <TilesIcon />
@@ -27,7 +27,7 @@ export const MobileChangeView = () => {
         <IconButton
           aria-label='list'
           onClick={() => dispatch(setIsList(true))}
-          bg={isList ? '#FF6900' : '#D4D4D4'}
+          bg={isList ? 'main' : 'light'}
           _hover={{ bg: 'auto' }}
         >
           <ListIcon />

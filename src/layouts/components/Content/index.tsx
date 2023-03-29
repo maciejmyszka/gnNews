@@ -1,14 +1,14 @@
 import { Grid, UnorderedList } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
-import { articlesState } from '../../../slices/articlesSlice';
-import { ArticleSquare } from '../ArticleSquare';
-import { SingleArticleProvider } from '../../../context/SingleArticleContext';
-import { Footer } from '../Footer';
-import { ArticleListElement } from '../ArticleListElement';
-import { Loader } from '../Loader';
-import { appState } from '../../../slices/appSlice';
-import { ContentWrapper } from '../../containers/ContentWrapper';
-import { StatusEnum } from '../../../enums/StatusEnum';
+import { articlesState } from 'slices/articlesSlice';
+import { ArticleSquare } from 'layouts/components/ArticleSquare';
+import { SingleArticleProvider } from 'context/SingleArticleContext';
+import { Footer } from 'layouts/components/Footer';
+import { ArticleListElement } from 'layouts/components/ArticleListElement';
+import { Loader } from 'layouts/components/Loader';
+import { appState } from 'slices/appSlice';
+import { ContentWrapper } from 'layouts/containers/ContentWrapper';
+import { StatusEnum } from 'enums/StatusEnum';
 
 export const Content = () => {
   const { articles, status } = useSelector(articlesState);

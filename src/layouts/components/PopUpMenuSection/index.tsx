@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+import { InfoIcon } from '@chakra-ui/icons';
 import {
   Button,
   IconButton,
@@ -5,9 +7,7 @@ import {
   PopoverTrigger,
   useMediaQuery,
 } from '@chakra-ui/react';
-import { Popup } from '../Popup';
-import { useTranslation } from 'react-i18next';
-import { InfoIcon } from '@chakra-ui/icons';
+import { Popup } from 'layouts/components/Popup';
 
 export const PopUpMenuSection = () => {
   const { t } = useTranslation();
@@ -18,13 +18,13 @@ export const PopUpMenuSection = () => {
     <Popover>
       {isShortcut ? (
         <PopoverTrigger>
-          <IconButton aria-label='pop-up' bg='#D4D4D4' _hover={{ bg: 'auto' }}>
+          <IconButton aria-label='pop-up' bg='light' _hover={{ bg: 'auto' }}>
             <InfoIcon />
           </IconButton>
         </PopoverTrigger>
       ) : (
         <PopoverTrigger>
-          <Button ml='2rem' bg='#D4D4D4'>
+          <Button ml='2rem' bg='light'>
             {t('header.openPopUp')}
           </Button>
         </PopoverTrigger>

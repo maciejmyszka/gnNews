@@ -1,6 +1,6 @@
-import { LangFormatEnum } from '../enums/LangFormatEnum';
-import { PolandIcon } from '../icons/PolandIcon';
-import { EnglishIcon } from '../icons/EnglishIcon';
+import { LangFormatEnum } from 'enums/LangFormatEnum';
+import { PolandIcon } from 'icons/PolandIcon';
+import { EnglishIcon } from 'icons/EnglishIcon';
 
 export const langs = [
   {

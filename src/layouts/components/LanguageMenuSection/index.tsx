@@ -1,11 +1,11 @@
 import { Button, Popover, PopoverTrigger, Text } from '@chakra-ui/react';
-import i18n from 'i18next';
-import { PolandIcon } from '../../../icons/PolandIcon';
-import { EnglishIcon } from '../../../icons/EnglishIcon';
-import { ChevronDownIcon } from '@chakra-ui/icons';
-import { LangPicker } from '../LangPicker';
 import { useTranslation } from 'react-i18next';
-import { LangFormatEnum } from '../../../enums/LangFormatEnum';
+import { ChevronDownIcon } from '@chakra-ui/icons';
+import i18n from 'i18next';
+import { PolandIcon } from 'icons/PolandIcon';
+import { EnglishIcon } from 'icons/EnglishIcon';
+import { LangPicker } from 'layouts/components/LangPicker';
+import { LangFormatEnum } from 'enums/LangFormatEnum';
 
 export const LanguageMenuSection = () => {
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ export const LanguageMenuSection = () => {
     <>
       <Text
         cursor='default'
-        color='#fff'
+        color='white'
         display={['none', 'none', 'none', 'block', 'block', 'block']}
       >
         {t('header.changeLanguage')}
@@ -33,7 +33,7 @@ export const LanguageMenuSection = () => {
             ) : (
               <EnglishIcon />
             )}
-            <ChevronDownIcon color='#fff' />
+            <ChevronDownIcon color='white' />
           </Button>
         </PopoverTrigger>
 

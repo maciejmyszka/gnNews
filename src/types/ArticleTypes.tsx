@@ -1,10 +1,10 @@
 export interface ArticleResponse {
   status: string;
   totalResults: number;
-  articles: ArticleType[];
+  articles: ArticleModel[];
 }
 
-export interface ArticleType {
+export interface ArticleModel {
   source: {
     id: string;
     name: string;

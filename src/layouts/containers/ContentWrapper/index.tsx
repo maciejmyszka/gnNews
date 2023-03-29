@@ -1,6 +1,6 @@
-import { Flex } from '@chakra-ui/react';
-import { ChildrenProps } from '../../../types/ChildrenProps';
 import { memo } from 'react';
+import { Flex } from '@chakra-ui/react';
+import { ChildrenProps } from 'types/ChildrenProps';
 
 export const ContentWrapper = memo(({ children }: ChildrenProps) => {
   return (

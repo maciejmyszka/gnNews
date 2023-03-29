@@ -1,15 +1,17 @@
-import { Flex, ListItem, Text } from '@chakra-ui/react';
-import { useSingleArticleContext } from '../../../context/SingleArticleContext';
 import { useState } from 'react';
-import { ArticleModal } from '../ArticleModal';
-import moment from 'moment';
-import { DateFormatEnum } from '../../../enums/DateFormatEnum';
+import { Flex, ListItem, Text } from '@chakra-ui/react';
+import { useSingleArticleContext } from 'context/SingleArticleContext';
+import { ArticleModal } from 'layouts/components/ArticleModal';
+import { DateFormatEnum } from 'enums/DateFormatEnum';
+import { useMoment } from 'hooks/useMoment';
+import { useTranslation } from 'react-i18next';
 
 export const ArticleListElement = () => {
   const { title, publishedAt, source } = useSingleArticleContext();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const { t } = useTranslation();
 
-  const date = moment(publishedAt).format(DateFormatEnum.TIME_DATE_FORMAT);
+  const date = useMoment(DateFormatEnum.TIME_DATE_FORMAT, publishedAt);
 
   return (
     <>
@@ -26,11 +28,11 @@ export const ArticleListElement = () => {
         justifyContent='space-between'
         flexDirection={['column', 'column', 'column', 'row', 'row', 'row']}
         p='1rem'
-        bg='rgba(8, 5, 4, 0.89)'
+        bg='lightGray'
         borderRadius='0.5rem'
       >
         <Text
-          color='#fff'
+          color='white'
           cursor='pointer'
           _hover={{ textDecoration: 'underline' }}
           onClick={() => setIsModalOpen(true)}
@@ -39,9 +41,10 @@ export const ArticleListElement = () => {
         </Text>
 
         <Flex justifyContent='flex-end' mt={['1rem', '1rem', '0']}>
-          <Text color='#fff' cursor='default'>
-            by <span style={{ color: 'rgba(242, 103, 0)' }}>{source.name}</span>{' '}
-            at {date}
+          <Text color='white' cursor='default'>
+            {t('content.by')}{' '}
+            <span style={{ color: '#FF6900' }}>{source.name}</span>{' '}
+            {t('content.at')} <span style={{ color: '#FF6900' }}>{date}</span>
           </Text>
         </Flex>
       </ListItem>
