@@ -34,7 +34,7 @@
     "hide": "Ukryj"
   },
   "message": {
-    "theMostDifficult": "Szczerze mówiąc to projekt nie był dla mnie dużym wyzwaniem. Miałem styczność już ze wszystkimi aspektami i funkcjami takiej aplikacji. Jeśli musiałbym jednak coś wybrać to najtrudniejsze dla mnie było wymyślenie widoku mobilnego dla Headera oraz testy z uwagi, że dość długo już ich nie pisałem.",
+    "theMostDifficult": "Szczerze mówiąc to projekt nie był dla mnie dużym wyzwaniem. Miałem styczność już ze wszystkimi aspektami i funkcjami takiej aplikacji. Jeśli musiałbym jednak coś wybrać to najtrudniejsze dla mnie było wymyślenie widoku mobilnego dla Headera.",
     "theFunniest": "Najfajniejszym zadaniem w projekcie było dla mnie projektowanie wizualne aplikacji oraz implementacja wymyślonych rozwiązań."
   }
 }

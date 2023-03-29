@@ -34,7 +34,7 @@
     "hide": "Hide"
   },
   "message": {
-    "theMostDifficult": "To be honest, this project was not a big challenge for me. I've already had contact with all aspects and functions of such an application. However, if I had to choose something, the most difficult for me was to figure out a mobile view for the Header and tests, because I haven't written them for quite a long time.",
+    "theMostDifficult": "To be honest, this project was not a big challenge for me. I've already had contact with all aspects and functions of such an application. However, if I had to choose something, the most difficult for me was to figure out a mobile view for the Header.",
     "theFunniest": "The coolest task in the project was the visual design of the application and the implementation of invented solutions."
   }
 }
