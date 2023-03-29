@@ -1,8 +1,11 @@
 # gnNews - gnStudio React.js developer challenge
 
 ![image](https://user-images.githubusercontent.com/85109727/228640485-6b77c872-d79b-45bc-9843-4c66c8cde6ae.png)
+
 ![image](https://user-images.githubusercontent.com/85109727/228640554-de7bd46f-b6eb-4276-ade1-295c99497506.png)
+
 ![image](https://user-images.githubusercontent.com/85109727/228640610-a6d2a77f-8b54-409b-ae84-a98d08e2ab81.png)
+
 ![image](https://user-images.githubusercontent.com/85109727/228640658-a14861f5-2fbc-497f-b44c-0641dc228a8e.png)
 
 
