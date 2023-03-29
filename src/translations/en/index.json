@@ -1,0 +1,40 @@
+{
+  "header": {
+    "changeLanguage": "Change language:",
+    "changeNewsView": "Change news view:",
+    "openPopUp": "Open pop-up",
+    "selectLanguage": "Select language",
+    "WhatWasTheMostDifficultTaskInProject": "What was the most difficult task in project?",
+    "WhatWasTheFunniestTaskInProject": "What was the funniest task in project?",
+    "showMessage": "Show message",
+    "settings": "Settings"
+  },
+  "menu": {
+    "chooseCountryOfTheNews": "Choose country of the news:",
+    "poland": "Poland",
+    "usa": "USA",
+    "france": "France",
+    "portugal": "Portugal",
+    "italy": "Italy",
+    "turkey": "Turkey",
+    "germany": "Germany",
+    "austria": "Austria"
+  },
+  "footer": {
+    "articlesQuantity": "Articles quantity:"
+  },
+  "content": {
+    "at": "at ",
+    "by": "by "
+  },
+  "buttons":{
+    "close": "Close",
+    "readMore": "Read more",
+    "show": "Show",
+    "hide": "Hide"
+  },
+  "message": {
+    "theMostDifficult": "To be honest, this project was not a big challenge for me. I've already had contact with all aspects and functions of such an application. However, if I had to choose something, the most difficult for me was to figure out a mobile view for the Header.",
+    "theFunniest": "The coolest task in the project was the visual design of the application and the implementation of invented solutions."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "header": {
+    "changeLanguage": "Zmień język:",
+    "changeNewsView": "Zmień widok wiadomości:",
+    "openPopUp": "Otwórz okienko",
+    "selectLanguage": "Wybierz język",
+    "WhatWasTheMostDifficultTaskInProject": "Jaka była najtrudniejsza rzecz w projekcie?",
+    "WhatWasTheFunniestTaskInProject": "Jaka była najfajniejsza rzecz w projekcie?",
+    "showMessage": "Pokaż wiadomość",
+    "settings": "Ustawienia"
+  },
+  "menu": {
+    "chooseCountryOfTheNews": "Wybierz kraj wiadomości:",
+    "poland": "Polska",
+    "usa": "Stany Zjednoczone",
+    "france": "Francja",
+    "portugal": "Portugalia",
+    "italy": "Włochy",
+    "turkey": "Turcja",
+    "germany": "Niemcy",
+    "austria": "Austria"
+  },
+  "footer": {
+    "articlesQuantity": "Ilość wiadomości:"
+  },
+  "content": {
+    "at": "o ",
+    "by": "przez "
+  },
+  "buttons":{
+    "close": "Zamknij",
+    "readMore": "Pokaż więcej",
+    "show": "Pokaż",
+    "hide": "Ukryj"
+  },
+  "message": {
+    "theMostDifficult": "Szczerze mówiąc to projekt nie był dla mnie dużym wyzwaniem. Miałem styczność już ze wszystkimi aspektami i funkcjami takiej aplikacji. Jeśli musiałbym jednak coś wybrać to najtrudniejsze dla mnie było wymyślenie widoku mobilnego dla Headera.",
+    "theFunniest": "Najfajniejszym zadaniem w projekcie było dla mnie projektowanie wizualne aplikacji oraz implementacja wymyślonych rozwiązań."
+  }
+}
