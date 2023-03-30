@@ -8,13 +8,12 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { theme } from 'config/theme';
 import { store } from 'config/store';
 
-export const AppProvider = ({ children }: any) => (
+export const AppProvider = () => (
   <Provider store={store}>
     <ChakraProvider theme={theme}>
       <ErrorBoundaryProvider>
         <Suspense fallback={<LoadingPage />}>
           <RouterProvider router={router} />
-          {children}
         </Suspense>
       </ErrorBoundaryProvider>
     </ChakraProvider>
