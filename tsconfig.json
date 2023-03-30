@@ -7,11 +7,7 @@
     "target": "esnext",
     "module": "commonjs",
     "moduleResolution": "node",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -41,7 +37,5 @@
       "utils/*": ["utils/*"]
     }
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
