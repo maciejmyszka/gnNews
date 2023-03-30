@@ -2,15 +2,9 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RootState } from 'config/store';
 import { useAxios } from 'hooks/useAxios';
 import { StatusEnum } from 'enums/StatusEnum';
-import { ArticleModel, ArticleResponse } from 'types/ArticleTypes';
+import { ArticleResponse, ArticleSliceInitial } from 'types/ArticleTypes';
 
-interface InitialTypes {
-  articles: ArticleModel[];
-  count: number;
-  status: StatusEnum;
-}
-
-const initialState: InitialTypes = {
+const initialState: ArticleSliceInitial = {
   articles: [],
   count: 0,
   status: StatusEnum.IDLE,

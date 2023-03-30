@@ -1,23 +1,5 @@
 import { createContext, memo, useContext } from 'react';
-import { ChildrenProps } from 'types/ChildrenProps';
-
-interface ArticleProviderProps extends ChildrenProps {
-  author: string;
-  content: string | null;
-  description: string | null;
-  publishedAt: string;
-  title: string;
-  url: string;
-  urlToImage: string | null;
-  source: {
-    id: string | null;
-    name: string;
-  };
-}
-
-type ArticleStateContext = Omit<ArticleProviderProps, 'children'>;
-
-//przenieść do typów
+import { ArticleProviderProps, ArticleStateContext } from 'types/ArticleTypes';
 
 export const singleArticleContext = createContext<ArticleStateContext | null>(
   null
